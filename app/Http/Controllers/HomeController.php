@@ -28,4 +28,10 @@ class HomeController extends Controller
         return view('home', ['users' => $users]);
     }
     
+
+    public function consultaruser()
+    {
+        $users = DB::select('select * from users');
+        return view('home', ['users' => $users]);
+    }
 }
