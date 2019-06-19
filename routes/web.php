@@ -27,3 +27,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@consultaruser')->name('home');
 Route::post('/deleteUser', 'UserController@deleteUser');
+

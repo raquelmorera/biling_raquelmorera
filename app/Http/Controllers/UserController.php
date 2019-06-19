@@ -13,5 +13,12 @@ class UserController extends Controller
     return 200;
   }
   
+  public function updateProducto(Request $request){
+
+    DB:: UPDATE ('UPDATE tbl_producto WHERE id= '.$request->id. ''); 
+  
+    return 200; 
+  }
+
 }
 

@@ -33,6 +33,15 @@
         
         <button class='btn-user-remove' data-user-id="{{ $user->id }}">ELIMINAR</button>
         </div>
+
+        <div>
+       
+       
+       
+       <button class='btn-user-update' data-user-id="{{ $user->id }}">MODIFICAR</button>
+       </div>
+           
+
     @endforeach
 </div>
 @endsection

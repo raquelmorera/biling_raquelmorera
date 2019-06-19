@@ -27,9 +27,14 @@ require('./bootstrap');
                         }
                     });
                 }
+
+
+               
+               
+
             });
         }
+    
     }
-
     APP.init();
 })();
