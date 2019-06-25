@@ -36,8 +36,6 @@
 
         <div>
        
-       
-       
        <button class='btn-user-update' data-user-id="{{ $user->id }}">MODIFICAR</button>
        </div>
            

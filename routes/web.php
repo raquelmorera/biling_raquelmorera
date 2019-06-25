@@ -20,6 +20,10 @@ Route::get('/home', function () {
     return view('/home');
 });
 
+Route::get('/bodega',function(){
+    return view('/BodegaProducto');
+});
+
 
 Auth::routes();
 
@@ -27,4 +31,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@consultaruser')->name('home');
 Route::post('/deleteUser', 'UserController@deleteUser');
-
+Route::get('/bodega','ProductsController@consultarProductos');
+Route::post('/ModificarProducto','ProductsController@updateProducto');

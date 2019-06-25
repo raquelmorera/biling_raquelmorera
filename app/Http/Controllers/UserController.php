@@ -15,8 +15,11 @@ class UserController extends Controller
   
   public function updateProducto(Request $request){
 
-    DB:: UPDATE ('UPDATE tbl_producto WHERE id= '.$request->id. ''); 
+    //DB:: UPDATE ('UPDATE tbl_producto WHERE id= '.$request->id. ''); 
   
+    DB::table('tbl_producto')
+    ->where('user_id', 1)
+    ->update(['username' => $username, 'status' => $status]);
     return 200; 
   }
 

@@ -36937,6 +36937,45 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
   APP.init();
 })();
 
+(function () {
+  var UpdateProducto = {
+    init: function init() {
+      this.addEvents();
+    },
+    addEvents: function addEvents() {
+      document.addEventListener('click', function (event) {
+        var target = event.target;
+
+        if (target.matches('.btnModificarProducto')) {
+          var idProductoUpdate = target.getAttribute('idProducto');
+          var detalleModificado = this.cacheElements.$inputDetalle.val();
+          $.ajax({
+            url: '/ModificarProducto',
+            method: "POST",
+            data: {
+              id: idProductoUpdate,
+              modificacion: detalleModificado
+            },
+            success: function success(response) {
+              console.log('response', response);
+
+              if (response === '200') {
+                location.reload();
+              } else {
+                alert('ocurrio un error');
+              }
+            }
+          });
+        }
+      }.bind(this));
+    },
+    cacheElements: {
+      $inputDetalle: $('.modificacionProducto')
+    }
+  };
+  UpdateProducto.init();
+})();
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

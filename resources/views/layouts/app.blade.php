@@ -76,6 +76,9 @@
             <div>
             @yield('users-section')
             </div>
+            <div>
+            @yield('Bodega_Productos')
+            </div>
         </main>
     </div>
 
