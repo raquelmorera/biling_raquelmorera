@@ -19,6 +19,7 @@ class TablaProductos extends Migration
             $table->integer('cod_producto');
             $table->string('nombre_producto', 100);
             $table->string('detalle_producto', 100);
+            $table->string('precio_producto', 100);
         });
     }
 

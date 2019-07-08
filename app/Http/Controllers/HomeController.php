@@ -22,13 +22,13 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
     public function index()
     {
         $users = DB::select('select * from users');
         return view('home', ['users' => $users]);
     }
     
-
     public function consultaruser()
     {
         $users = DB::select('select * from users');

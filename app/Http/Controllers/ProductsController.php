@@ -20,4 +20,9 @@ class ProductsController extends Controller
             ->update(['detalle_producto' => $request->modificacion]);
         return 200;
     }
+
+    public function deleteProducto(){
+        DB::select('DELETE FROM tbl_productos WHERE id='.$request->id.'');
+        return 200;
+    }
 }

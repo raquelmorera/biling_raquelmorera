@@ -79,6 +79,9 @@
             <div>
             @yield('Bodega_Productos')
             </div>
+            <div>
+            @yield('Principal_Productos')
+            </div>
         </main>
     </div>
 
