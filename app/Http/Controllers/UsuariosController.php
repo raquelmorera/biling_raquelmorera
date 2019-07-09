@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\facturas;
-class FacturasController extends Controller
+use App\usuarios;
+class UsuariosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,10 +13,9 @@ class FacturasController extends Controller
      */
     public function index()
     {
+        $usuarios = usuarios::all();
 
-        $facturas = facturas::all();
-
-        return view('Facturas.index', compact('facturas'));
+        return view('Usuarios.index', compact('usuarios'));
     }
 
     /**
@@ -26,7 +25,7 @@ class FacturasController extends Controller
      */
     public function create()
     {
-        return view('Facturas.create');
+        return view('Usuarios.create');
     }
 
     /**
@@ -38,21 +37,21 @@ class FacturasController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'factura_detalle'=>'required',
-            'factura_cod'=>'required',
-            'factura_precio'=>'required'
-            
+            'name'=>'required',
+            'email'=>'required',
+            'email_verified_at'=>'required',
+            'password' =>'required'
         ]);
 
-        $factura = new facturas([
-            'factura_detalle' => $request->get('factura_detalle'),
-            'factura_cod' => $request->get('factura_cod'),
-            'factura_precio' => $request->get('factura_precio')
-           
+        $usuario = new usuarios([
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'email_verified_at' => $request->get('email_verified_at'),
+            'password' => $request->get('password')
            
         ]);
-        $factura->save();
-        return redirect('/facturas')->with('success', 'Factura saved!');
+        $usuario->save();
+        return redirect('/usuarios')->with('success', 'User saved!');
     }
 
     /**
@@ -74,8 +73,8 @@ class FacturasController extends Controller
      */
     public function edit($id)
     {
-        $factura = facturas::find($id);
-        return view('Facturas.edit', compact('factura'));
+        $usuario = usuarios::find($id);
+        return view('Usuarios.edit', compact('usuario'));
     }
 
     /**
@@ -88,18 +87,20 @@ class FacturasController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'factura_detalle'=>'required',
-            'factura_cod'=>'required',
-            'factura_precio'=>'required'
+            'name'=>'required',
+            'email'=>'required',
+            'email_verified_at'=>'required',
+            'password' =>'required'
         ]);
     
-        $factura = facturas::find($id);
-            $factura->factura_detalle =  $request->get('factura_detalle');
-            $factura->factura_cod = $request->get('factura_cod');
-            $factura->factura_precio = $request->get('factura_precio');
-            $factura->save();
+        $usuario = usuarios::find($id);
+            $usuario->name =  $request->get('name');
+            $usuario->email = $request->get('email');
+            $usuario->email_verified_at = $request->get('email_verified_at');
+            $usuario->password = $request->get('password');
+            $usuario->save();
     
-            return redirect('/facturas')->with('success', 'Factura Actualizada!');
+            return redirect('/usuarios')->with('success', 'Usuario Actualizado!');
     }
 
     /**
@@ -110,9 +111,9 @@ class FacturasController extends Controller
      */
     public function destroy($id)
     {
-        $factura = facturas::find($id);
-        $factura->delete();
+        $usuario = usuarios::find($id);
+        $usuario->delete();
 
-        return redirect('/facturas')->with('success', 'Factura Eliminada!');
+        return redirect('/usuarios')->with('success', 'Usuario Eliminado!');
     }
 }

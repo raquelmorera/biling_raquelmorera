@@ -11,7 +11,6 @@ class TablaProductos extends Migration
      *
      * @return void
      */
-
     public function up()
     {
         Schema::create('tbl_producto', function (Blueprint $table) {
@@ -31,6 +30,5 @@ class TablaProductos extends Migration
     public function down()
     {
         Schema::dropIfExists('tbl_producto');
-   
     }
 }

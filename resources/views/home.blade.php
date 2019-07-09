@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Raquel Morera </div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Bienvenidos!
                 </div>
             </div>
         </div>
@@ -23,24 +23,10 @@
 @endsection
 
 @section('users-section')
-<div class="container">
-    <p>AQUI VA TODA LA INFO DE LOS USUARIOS</p>
-
-    @foreach($users as $user)
-        <div>
-       
-        <p>{{ $user->name }}</p>
-        
-        <button class='btn-user-remove' data-user-id="{{ $user->id }}">ELIMINAR</button>
-        </div>
-
-        <div>
-       
-       <button class='btn-user-update' data-user-id="{{ $user->id }}">MODIFICAR</button>
-       </div>
-           
-
-    @endforeach
-</div>
+<div class= "container">
+<a style="margin: 19px;" href="{{ route('productos.index')}}" class="btn btn-primary">Ir a Productos</a>
+<a style="margin: 19px;" href="{{ route('usuarios.index')}}" class="btn btn-primary">Ir a Usuarios</a>
+<a style="margin: 19px;" href="{{ route('facturas.index')}}" class="btn btn-primary">Ir a Facturas</a>
 @endsection
+
 

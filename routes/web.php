@@ -22,22 +22,16 @@ Route::get('/home',function(){
 
 Auth::routes();
 
-
+Route::resource('productos', 'ProductosController');
+Route::resource('usuarios', 'UsuariosController');
+Route::resource('facturas', 'FacturasController');
 
 Route::get('/home', 'HomeController@consultaruser')->name('home');
 
-//Usuarios
-Route::get('/usuarios','UserController@consultarUsers')->name('Usuarios');
-Route::post('/deleteUser','UserController@deleteUser');
-Route::post('/updateUsuario','UserController@updateUser');
 
-//Productos
-Route::get('/bodega','ProductsController@consultarProductos')->name('Productos');
-Route::post('/updateProducto', 'ProductsController@updateProducto');
-Route::post('/deleteProducto','ProductsController@deleteProducto');
 
 //Facturas
-Route::get('/facturas','FacturasController@consultarFacturas')->name('Facturas');
-Route::post('/deleteFactura','FacturasController@deleteFacturas');
-Route::post('/updateFactura', 'FacturasController@updateFacturas');
+Route::get('/facturast','FacturasControllert@consultarFacturast')->name('Facturast');
+Route::post('/deleteFacturat','FacturastControllert@deleteFacturast');
+Route::post('/updateFacturat', 'FacturastControllert@updateFacturast');
 
