@@ -18,8 +18,7 @@ class facturas extends Model
   
       'factura_detalle',
       'factura_cod',
-      'factura_precio',
+      'factura_precio'
       
-  
       ];
 }

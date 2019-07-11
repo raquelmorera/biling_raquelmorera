@@ -14,7 +14,7 @@
         </div>
         <br /> 
         @endif
-        <form method="post" action="{{ route('facturas.update', $factura->id) }}">
+        <form method="post" action="{{ route('facturas.update', $factura->id_fact) }}">
             @method('PATCH') 
             @csrf
             <div class="form-group">

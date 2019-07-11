@@ -32,7 +32,7 @@
           </div>
                            
           <button type="submit" class="btn btn-success">Agregar Factura</button>
-          <a style="margin: 19px;" href="{{ route('productos.index')}}" class="btn btn-danger">Cancelar</a>
+          <a style="margin: 19px;" href="{{ route('facturas.index')}}" class="btn btn-danger">Cancelar</a>
       </form>
      
   </div>

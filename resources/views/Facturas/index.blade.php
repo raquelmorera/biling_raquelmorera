@@ -17,8 +17,8 @@
     <h1 class="display-3">Facturas</h1>  
     <br>
     <div>
-    <a style="margin: 19px;" href="{{ route('facturas.create')}}" class="btn btn-primary">Agregar Factura</a>
-    <a style="margin: 19px;" href="{{ route('home')}}" class="btn btn-primary">Ir a Inicio</a>
+    <a style="margin: 19px;" href="{{route('facturas.create')}}" class="btn btn-primary">Agregar Factura</a>
+    <a style="margin: 19px;" href="{{route('home')}}" class="btn btn-primary">Ir a Inicio</a>
     </div>  
 
   <table class="table table-striped">
@@ -34,17 +34,17 @@
     <tbody>
         @foreach($facturas as $factura)
         <tr>
-            <td>{{$factura->id}}</td>
+            <td>{{$factura->id_fact}}</td>
             <td>{{$factura->factura_detalle}} </td>
             <td>{{$factura->factura_cod}}</td>
             <td>{{$factura->factura_precio}}</td>
         
             
             <td>
-                <a href="{{ route('facturas.edit',$factura->id)}}" class="btn btn-primary">Editar</a>
+                <a href="{{ route('facturas.edit',$factura->id_fact)}}" class="btn btn-primary">Editar</a>
             </td>
             <td>
-                <form action="{{ route('facturas.destroy', $factura->id)}}" method="post">
+                <form action="{{ route('facturas.destroy', $factura->id_fact)}}" method="post">
                   @csrf
                   @method('DELETE')
                   <button class="btn btn-danger" type="submit">Eliminar</button>
