@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class facturas extends Model
 {
       // le dice al modelo como se llama la tabla con la que va a trabajar
-      protected $table = 'tbl_facturas'; 
+      protected $table = 'tabla_facturas'; 
 
 
       //si la tabla no tiene los camos de tiempo, hace que el modelo entienda que no los usa
@@ -17,7 +17,6 @@ class facturas extends Model
       protected $fillable =[
   
       'factura_detalle',
-      'factura_cod',
       'factura_precio'
       
       ];

@@ -25,26 +25,24 @@
     <thead>
         <tr>
           <td>ID</td>
-          <td>Detalle</td>
-          <td>Codigo</td>
-          <td>Precio</td>
+          <td>ID Usuario</td>
+          <td>Precio Total</td>
           <td colspan = 2>Acciones</td>
         </tr>
     </thead>
     <tbody>
         @foreach($facturas as $factura)
         <tr>
-            <td>{{$factura->id_fact}}</td>
-            <td>{{$factura->factura_detalle}} </td>
-            <td>{{$factura->factura_cod}}</td>
-            <td>{{$factura->factura_precio}}</td>
+            <td>{{$factura->id}}</td>
+            <td>{{$factura->id_user}} </td>
+            <td>{{$factura->preciototal}}</td>
         
             
             <td>
-                <a href="{{ route('facturas.edit',$factura->id_fact)}}" class="btn btn-primary">Editar</a>
+                <a href="{{ route('facturas.edit',$factura->id)}}" class="btn btn-primary">Editar</a>
             </td>
             <td>
-                <form action="{{ route('facturas.destroy', $factura->id_fact)}}" method="post">
+                <form action="{{ route('facturas.destroy', $factura->id)}}" method="post">
                   @csrf
                   @method('DELETE')
                   <button class="btn btn-danger" type="submit">Eliminar</button>

@@ -72,7 +72,7 @@ class ProductosController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $id_prod
      * @return \Illuminate\Http\Response
      */
     public function edit($id)

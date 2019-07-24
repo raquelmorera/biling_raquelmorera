@@ -24,7 +24,7 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <td>id</td>
+          <td>ID</td>
           <td>Codigo</td>
           <td>Nombre</td>
           <td>Detalle</td>

@@ -21,10 +21,7 @@
               <input type="text" class="form-control" name="factura_detalle"/>
           </div>
 
-          <div class="form-group">
-              <label for="factura_cod">Codigo:</label>
-              <input type="text" class="form-control" name="factura_cod"/>
-          </div>
+        
 
           <div class="form-group">
               <label for="factura_precio">Precio:</label>

@@ -14,7 +14,7 @@
         </div>
         <br /> 
         @endif
-        <form method="post" action="{{ route('facturas.update', $factura->id_fact) }}">
+        <form method="post" action="{{ route('facturas.update')}}">
             @method('PATCH') 
             @csrf
             <div class="form-group">
@@ -23,13 +23,9 @@
                 <input type="text" class="form-control" name="factura_detalle" value={{ $factura->factura_detalle }} />
             </div>
 
-            <div class="form-group">
-                <label for="factura_cod">Codigo:</label>
-                <input type="text" class="form-control" name="factura_cod" value={{ $factura->factura_cod }} />
-            </div>
 
             <div class="form-group">
-                <label for="factura_precio">Detalle:</label>
+                <label for="factura_precio">Precio:</label>
                 <input type="text" class="form-control" name="factura_precio" value={{ $factura->factura_precio }} />
             </div>
             

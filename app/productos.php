@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class productos extends Model
 {
     // le dice al modelo como se llama la tabla con la que va a trabajar
-    protected $table = 'tbl_producto'; 
+    protected $table = 'tabla_productos'; 
 
 
     //si la tabla no tiene los camos de tiempo, hace que el modelo entienda que no los usa

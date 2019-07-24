@@ -13,12 +13,13 @@ class TablaProductos extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_producto', function (Blueprint $table) {
+        Schema::create('tabla_productos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('cod_producto');
-            $table->string('nombre_producto', 100);
-            $table->string('detalle_producto', 100);
-            $table->string('precio_producto', 100);
+            $table->bigInteger('cod_producto')->unique()->unsigned();
+            $table->string('nombre_producto');
+            $table->string('detalle_producto');
+            $table->float('precio_producto');
+            $table->timestamps();
         });
     }
 
@@ -29,6 +30,6 @@ class TablaProductos extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_producto');
+        Schema::dropIfExists('tabla_productos');
     }
 }

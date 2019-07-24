@@ -37,31 +37,16 @@ class FacturasController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'factura_detalle'=>'required',
-            'factura_cod'=>'required',
-            'factura_precio'=>'required'
-            
-        ]);
-
-        $factura = new facturas([
-            'factura_detalle' => $request->get('factura_detalle'),
-            'factura_cod' => $request->get('factura_cod'),
-            'factura_precio' => $request->get('factura_precio')
-            
-        ]);
-
-        $factura->save();
-        return redirect('/facturas')->with('success', 'Factura saved!');
+        
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id_fact
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id_fact)
+    public function show($id)
     {
         //
     }
@@ -69,12 +54,12 @@ class FacturasController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id_fact
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id_fact)
+    public function edit($id)
     {
-        $factura = facturas::find($id_fact);
+        $factura = facturas::find($id);
         return view('Facturas.edit', compact('factura'));
     }
 
@@ -82,21 +67,19 @@ class FacturasController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id_fact
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id_fact)
+    public function update(Request $request)
     {
         $request->validate([
-            'factura_detalle'=>'required',
-            'factura_cod'=>'required',
-            'factura_precio'=>'required'
+            'id_user'=>'required',
+            'preciototal'=>'required'
         ]);
     
-        $factura = facturas::find($id_fact);
-            $factura->factura_detalle =  $request->get('factura_detalle');
-            $factura->factura_cod = $request->get('factura_cod');
-            $factura->factura_precio = $request->get('factura_precio');
+        $factura = facturas::find($id);
+            $factura->id_user =  $request->get('id_user');
+            $factura->preciototal = $request->get('preciototal');
             $factura->save();
     
             return redirect('/facturas')->with('success', 'Factura Actualizada!');
@@ -105,12 +88,12 @@ class FacturasController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id_fact
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id_fact)
+    public function destroy($id)
     {
-        $factura = facturas::find($id_fact);
+        $factura = facturas::find($id);
         $factura->delete();
 
         return redirect('/facturas')->with('success', 'Factura Eliminada!');

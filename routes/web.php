@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('/auth/login');
+    return view('auth.login');
 });
 
 Route::get('/home',function(){
@@ -30,8 +30,5 @@ Route::get('/home', 'HomeController@consultaruser')->name('home');
 
 
 
-//Facturas
-Route::get('/facturast','FacturasControllert@consultarFacturast')->name('Facturast');
-Route::post('/deleteFacturat','FacturastControllert@deleteFacturast');
-Route::post('/updateFacturat', 'FacturastControllert@updateFacturast');
+
 
