@@ -24,9 +24,10 @@
 
 @section('users-section')
 <div class= "container">
-<a style="margin: 19px;" href="{{ route('productos.index')}}" class="btn btn-primary">Ir a Productos</a>
-<a style="margin: 19px;" href="{{ route('usuarios.index')}}" class="btn btn-primary">Ir a Usuarios</a>
-<a style="margin: 19px;" href="{{ route('facturas.index')}}" class="btn btn-primary">Ir a Facturas</a>
+<a style="margin: 80px;" href="{{ route('productos.index')}}" class="btn btn-success btn-lg">Productos</a>
+<a style="margin: 80px;" href="{{ route('usuarios.index')}}" class="btn btn-success btn-lg">Usuarios</a>
+<a style="margin: 80px;" href="{{ route('facturas.index')}}" class="btn btn-success btn-lg">Facturas</a>
+<a style="margin: 80px;" href="/bills" class="btn btn-success btn-lg">Reportes</a>
 @endsection
 
 

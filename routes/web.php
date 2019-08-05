@@ -32,3 +32,10 @@ Route::get('/home', 'HomeController@consultaruser')->name('home');
 
 
 
+
+Route::get('/verfacturas', 'ReporteController@getfacturas');
+Route::get('/verfacturasbyusers', 'ReporteController@facturasbyusers');
+Route::get('/verfacturasbyproductos','ReporteController@facturasbyproductos');
+
+
+

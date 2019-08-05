@@ -1,88 +1,45 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use DB;
 
 class ReporteController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function getBill()
     {
-        //
+
+        $dataBill = DB::table("facturas_productos")
+        ->join("tabla_facturas", "facturas_productos.id_fact", "=", "tabla_facturas.id")
+        ->select("facturas_productos.*", "tabla_facturas.*")
+        ->get();
+
+        return view('Reporte.getfacturas',compact('dataBill'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function getBillbyUser()
     {
-        //
+        
+        $dataBill = DB::table("tabla_facturas")
+        ->join("users","tabla_facturas.id_user", "=", "users.id")
+        ->select("users.*", "tabla_facturas.*")
+        ->get();
+        return view('Reporte.facturasbyusers',compact('dataBill'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function getBillbyProduct()
     {
-        //
+        $dataBill = DB::table("facturas_productos")
+        ->join("tabla_facturas", "facturas_productos.id_fact", "=", "tabla_facturas.id")
+        ->join("tabla_productos", "facturas_productos.cod_producto", "=", "tabla_productos.cod_producto")
+        ->select("facturas_productos.*", "tabla_facturas.*", "tabla_productos.*")
+        ->get();
+
+        return view('Reporte.facturasbyproductos',compact('dataBill'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
-
-    
 
 }
+
+
