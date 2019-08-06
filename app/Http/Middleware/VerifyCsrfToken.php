@@ -21,7 +21,10 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         //
         'deleteUser', 
-        'ModificarProducto'
+        'ModificarProducto',
+        'getfacturas',
+        'facturasbyusers',
+        'facturasbyproductos'
         
     ];
 }

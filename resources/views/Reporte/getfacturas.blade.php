@@ -4,13 +4,13 @@
 
 <br>
 <div>
-    <div class=" d-flex justify-content-center">
-        <h1 class="display-4">Detalle de Facturas</h1>
+    <div class="justify-content">
+        <h1 class="display-3">Detalle de Facturas</h1>
     </div>
-</div>
+   </div>
     
-    <div class="text-right">
-        <a class="btn btn-primary" href="/Reporte">Regresar</a>
+    <div class="text-left">
+        <a class="btn btn-danger" href="/bills">Volver</a>
     </div>
 
 <br>
@@ -19,20 +19,18 @@
     <thead>
         <tr>
           <td>ID</td>
-          <td>Numero de Factura</td>
+          <td>#Factura</td>
           <td>Codigo del Producto</td>
-          <td>ID Usuario </td>
           <td>Precio total</td>  
         </tr>
     </thead>
     <tbody>
-    @foreach($dataBill as $bill)
+    @foreach($dataBill as $fact)
         <tr>
-            <td>{{$bill->id}}</td>
-            <td>{{$bill->id_fact}}</td>
-            <td>{{$bill->cod_producto}}</td>
-            <td>{{$bill->id_user}}</td>
-            <td>{{$bill->preciototal}}</td>
+            <td>{{$fact->id}}</td>
+            <td>{{$fact->id_fact}}</td>
+            <td>{{$fact->cod_producto}}</td>
+            <td>{{$fact->preciototal}}</td>
 
         </tr>
         @endforeach

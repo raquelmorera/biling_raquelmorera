@@ -3,34 +3,36 @@
 @section('main')
 
 <br>
-<div class="d-flex justify-content-center">
-    <h1 class="display-4">Facturas por Usuarios</h1>
-</div>
+  <div class="justify-content">
+     <h1 class="display-3">Facturas por Usuarios</h1>
+  </div>
 
-<div class="text-right">
-    <a class="btn btn-primary" href="/Reporte">Regresar</a>
-</div>
+  <div class="text-left">
+      <a class="btn btn-danger" href="/bills">Volver</a>
+   </div>
 
 <br>
 
 <table class="table table-striped">
     <thead>
         <tr>
-          <td>ID Factura</td>
-          <td>Correo </td>
-          <td>Nombre Usuario</td>
           <td>ID Usuario</td>
+          <td>Nombre Usuario</td>
+          <td>Correo </td>
+          <td>ID Factura</td>
           <td>Precio total</td>  
         </tr>
     </thead>
+
+
     <tbody>
-    @foreach($dataBill as $bill)
+    @foreach($dataBill as $fact)
         <tr>
-            <td>{{$bill->id}}</td>
-            <td>{{$bill->email}}</td>
-            <td>{{$bill->name}}</td>
-            <td>{{$bill->id_user}}</td>
-            <td>{{$bill->preciototal}}</td>
+           <td>{{$fact->id_user}}</td>
+           <td>{{$fact->name}}</td>
+           <td>{{$fact->email}}</td>
+            <td>{{$fact->id}}</td>
+            <td>{{$fact->preciototal}}</td>
 
         </tr>
         @endforeach

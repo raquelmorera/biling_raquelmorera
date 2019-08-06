@@ -20,6 +20,12 @@ Route::get('/home',function(){
 
 });
 
+Route::get('/bills',function(){
+    return view('reporte.bills');
+
+});
+  
+
 Auth::routes();
 
 Route::resource('productos', 'ProductosController');
@@ -28,14 +34,9 @@ Route::resource('facturas', 'FacturasController');
 
 Route::get('/home', 'HomeController@consultaruser')->name('home');
 
-
-
-
-
-
-Route::get('/verfacturas', 'ReporteController@getfacturas');
-Route::get('/verfacturasbyusers', 'ReporteController@facturasbyusers');
-Route::get('/verfacturasbyproductos','ReporteController@facturasbyproductos');
+Route::get('/verfacturas', 'ReporteController@getFacturas');
+Route::get('/verfacturasbyusers', 'ReporteController@Facturasbyusers');
+Route::get('/verfacturasbyproductos','ReporteController@Facturasbyproductos');
 
 
 

@@ -1,18 +1,24 @@
 @extends('layouts.miplantilla')
 
 @section('main')
-
+<div class="col-sm-12">
 <div>
     <br>
-    <h1 class="d-flex justify-content-center display-3">Facturación</h1>
-</div>
-<hr>
-<div class="text-center">
+    <h1 class="display-3">Reportes</h1>
+  </div>
+  
     <br>
-    <div class="d-flex justify-content-around">
-        <a href="viewBills" class="btn btn-info btn-lg">Facturas</a>
-        <a href="viewBillsByUser" class="btn btn-info btn-lg">Facturas por Usuarios</a>
-        <a href="viewBillsbyProduct" class="btn btn-info btn-lg">Facturas por Producto</a>
+
+    <div>
+    <a style="margin: 19px;" href="{{ route('home')}}" class="btn btn-primary">Ir a Inicio</a>
+    </div>
+
+
+    <div class="row justify-content-center">
+      
+        <a style="margin: 30px;" href="verfacturas" class="btn btn-warning ">Facturas</a>
+        <a style="margin: 30px;" href="verfacturasbyusers" class="btn btn-warning ">Por Usuarios</a>
+        <a style="margin: 30px;" href="verfacturasbyproductos" class="btn btn-warning ">Por Producto</a>
     </div>
     
 </div>
@@ -20,8 +26,6 @@
 <br>
 <br>
 
-<div class= "fixed-bottom">
-<a href="/home" class="btn btn-primary">Inicio</a>
-</div>
+
 
 @endsection

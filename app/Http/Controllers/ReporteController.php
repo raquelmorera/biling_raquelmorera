@@ -7,7 +7,7 @@ use DB;
 class ReporteController extends Controller
 {
 
-    public function getBill()
+    public function getFacturas()
     {
 
         $dataBill = DB::table("facturas_productos")
@@ -15,20 +15,20 @@ class ReporteController extends Controller
         ->select("facturas_productos.*", "tabla_facturas.*")
         ->get();
 
-        return view('Reporte.getfacturas',compact('dataBill'));
+        return view('reporte.getfacturas',compact('dataBill'));
     }
 
-    public function getBillbyUser()
+    public function Facturasbyusers()
     {
         
         $dataBill = DB::table("tabla_facturas")
         ->join("users","tabla_facturas.id_user", "=", "users.id")
         ->select("users.*", "tabla_facturas.*")
         ->get();
-        return view('Reporte.facturasbyusers',compact('dataBill'));
+        return view('reporte.facturasbyuser',compact('dataBill'));
     }
 
-    public function getBillbyProduct()
+    public function Facturasbyproductos()
     {
         $dataBill = DB::table("facturas_productos")
         ->join("tabla_facturas", "facturas_productos.id_fact", "=", "tabla_facturas.id")
@@ -36,7 +36,7 @@ class ReporteController extends Controller
         ->select("facturas_productos.*", "tabla_facturas.*", "tabla_productos.*")
         ->get();
 
-        return view('Reporte.facturasbyproductos',compact('dataBill'));
+        return view('reporte.facturasbyproductos',compact('dataBill'));
     }
 
 
